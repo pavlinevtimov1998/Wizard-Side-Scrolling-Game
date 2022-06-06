@@ -4,7 +4,5 @@ function start() {
 
 function gameLoop() {
 
-    
-
   window.requestAnimationFrame(gameLoop);
 }

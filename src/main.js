@@ -1,7 +1,9 @@
 const state = initState();
 
-state.startGame.addEventListener('click', e => {
-    e.target.classList.add('hide');
+state.startGame.addEventListener("click", (e) => {
+  e.target.classList.add("hide");
 
-    start();
-})
+  state.createWizard();
+
+  start(state);
+});
