@@ -9,8 +9,11 @@ function initialGameObj() {
       const wizardElement = document.createElement("div");
       wizardElement.classList.add("wizard");
 
-      wizardElement.style.left = 20 + "%";
-      wizardElement.style.top = 20 + "%";
+      wizardElement.style.left = this.stateOfWizard.left + "%";
+      wizardElement.style.top = this.stateOfWizard.top + "%";
+
+      wizardElement.style.width = this.stateOfWizard.width;
+      wizardElement.style.height = this.stateOfWizard.height;
 
       this.screen.appendChild(wizardElement);
 
@@ -19,5 +22,12 @@ function initialGameObj() {
       return wizardElement;
     },
     keys: {},
+    stateOfWizard: {
+      width: 82,
+      height: 100,
+      left: 20,
+      top: 20,
+      speed: 10,
+    },
   };
 }
