@@ -18,5 +18,6 @@ function initialGameObj() {
 
       return wizardElement;
     },
+    keys: {},
   };
 }
