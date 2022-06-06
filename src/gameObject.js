@@ -1,17 +1,20 @@
-function initState() {
-  const startGame = document.querySelector(".start-game");
+function initialGameObj() {
+  const startGameBtn = document.querySelector(".start-game");
+  const screen = document.querySelector(".screen");
 
   return {
-    startGame,
+    startGameBtn,
+    screen,
     createWizard() {
-      const screen = document.querySelector(".screen");
       const wizardElement = document.createElement("div");
       wizardElement.classList.add("wizard");
 
       wizardElement.style.left = 20 + "%";
       wizardElement.style.top = 20 + "%";
 
-      screen.appendChild(wizardElement);
+      this.screen.appendChild(wizardElement);
+
+      this.wizardElement = wizardElement;
 
       return wizardElement;
     },
