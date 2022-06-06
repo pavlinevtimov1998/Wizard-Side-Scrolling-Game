@@ -1,8 +1,8 @@
-body{
-    margin: 0;
-    padding: 0;
-    font-family: 'consolas';
-    font-size: 32px;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "consolas";
+  font-size: 32px;
 }
 
 .screen {
@@ -26,11 +26,27 @@ body{
 }
 
 .start-game {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #F4FF9D;
-    padding: 32px 64px;
-    border-radius: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f4ff9d;
+  padding: 32px 64px;
+  border-radius: 16px;
+}
+
+.wizard {
+  background-image: url(./images/wizard.png);
+  position: absolute;
+  width: 82px;
+  height: 100px;
+}
+
+.start-game:hover {
+  background-color: #e1ff00;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
 }
