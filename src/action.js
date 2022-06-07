@@ -64,3 +64,28 @@ function fireBalls(game, timestamp) {
     });
   }
 }
+
+function killBugs() {
+  document.querySelectorAll(".bugs").forEach((e) => {
+    document.querySelectorAll(".fireBalls").forEach((f) => {
+      if (detectCollision(e, f)) {
+        e.remove();
+        f.remove();
+      }
+    });
+  });
+}
+
+function detectCollision(objA, objB) {
+  let first = objA.getBoundingClientRect();
+  let second = objB.getBoundingClientRect();
+
+  let isCollision = !(
+    first.top > second.bottom ||
+    first.bottom < second.top ||
+    first.right < second.left ||
+    first.left > second.right
+  );
+
+  return isCollision;
+}
