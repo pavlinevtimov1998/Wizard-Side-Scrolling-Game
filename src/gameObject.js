@@ -1,10 +1,13 @@
 function initialGameObj() {
   const startGameBtn = document.querySelector(".start-game");
   const screen = document.querySelector(".screen");
+  const score = document.createElement("div");
+  score.textContent = "score: ";
 
   return {
     startGameBtn,
     screen,
+    score,
     createWizard() {
       const wizardElement = document.createElement("div");
       wizardElement.classList.add("wizard");
@@ -30,23 +33,24 @@ function initialGameObj() {
       speed: 10,
     },
     isWorking: true,
-    
+
     createBug() {
-      if(this.isWorking) {
-      const bugElement = document.createElement("div");
-      bugElement.classList.add("bugs");
+      if (this.isWorking) {
+        const bugElement = document.createElement("div");
+        bugElement.classList.add("bugs");
 
-      bugElement.style.left = screen.offsetWidth - this.bugsState.width + "px";
-      bugElement.style.top = Math.floor(Math.random() * 700) + "px";
+        bugElement.style.left =
+          screen.offsetWidth - this.bugsState.width + "px";
+        bugElement.style.top = Math.floor(Math.random() * 700) + "px";
 
-      bugElement.style.width = this.bugsState.width + "px";
-      bugElement.style.height = this.bugsState.height + "px";
+        bugElement.style.width = this.bugsState.width + "px";
+        bugElement.style.height = this.bugsState.height + "px";
 
-      this.screen.appendChild(bugElement);
+        this.screen.appendChild(bugElement);
 
-      this.bugElement = bugElement;
+        this.bugElement = bugElement;
 
-      return bugElement;
+        return bugElement;
       }
     },
     bugsState: {
@@ -56,26 +60,28 @@ function initialGameObj() {
       speed: 6,
     },
     createFireBalls() {
-      const fireBalls = document.createElement("div");
-      fireBalls.classList.add("fireBalls");
+      if (this.isWorking) {
+        const fireBalls = document.createElement("div");
+        fireBalls.classList.add("fireBalls");
 
-      fireBalls.style.width = this.stateOfFireBalls.width + "px";
-      fireBalls.style.height = this.stateOfFireBalls.height + "px";
+        fireBalls.style.width = this.stateOfFireBalls.width + "px";
+        fireBalls.style.height = this.stateOfFireBalls.height + "px";
 
-      fireBalls.style.left =
-        parseInt(this.wizardElement.style.left) +
-        this.stateOfWizard.width +
-        "px";
-      fireBalls.style.top =
-        parseInt(this.wizardElement.style.top) +
-        this.stateOfWizard.height / 3 +
-        "px";
+        fireBalls.style.left =
+          parseInt(this.wizardElement.style.left) +
+          this.stateOfWizard.width +
+          "px";
+        fireBalls.style.top =
+          parseInt(this.wizardElement.style.top) +
+          this.stateOfWizard.height / 3 +
+          "px";
 
-      this.screen.appendChild(fireBalls);
+        this.screen.appendChild(fireBalls);
 
-      this.fireBalls = fireBalls;
+        this.fireBalls = fireBalls;
 
-      return fireBalls;
+        return fireBalls;
+      }
     },
     stateOfFireBalls: {
       width: 32,

@@ -17,6 +17,8 @@ game.startGameBtn.addEventListener("click", (e) => {
   e.target.classList.add("hide");
 
   game.createWizard();
+  game.score.classList.add('score');
+  game.screen.appendChild(game.score);
   
   start(game);
 });

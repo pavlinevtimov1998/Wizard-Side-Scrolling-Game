@@ -35,6 +35,15 @@ body {
   border-radius: 16px;
 }
 
+.score {
+    position: sticky;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 22px;
+}
+
 .wizard {
   background-image: url(/src/images/wizard.png);
   background-size: cover;

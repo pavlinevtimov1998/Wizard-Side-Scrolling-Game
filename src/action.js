@@ -28,7 +28,7 @@ function moveWizard(game) {
     "px";
 
   wizardElement.style.top =
-    Math.floor(Math.max(stateOfWizard.top - stateOfWizard.height, 0)) + "px";
+    Math.floor(Math.max(stateOfWizard.top - stateOfWizard.height + 125 , 0)) + "px";
 }
 
 function moveBugs() {
