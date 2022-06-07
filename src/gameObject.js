@@ -48,6 +48,8 @@ function initialGameObj() {
     bugsState: {
       width: 32,
       height: 32,
+      timeSpawn: 1500,
+
     },
   };
 }
