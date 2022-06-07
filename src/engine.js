@@ -11,10 +11,10 @@ function gameLoop(game, timestamp) {
   //End game
   killWizard(game);
 
-  if (timestamp > game.bugsState.timeSpawn && game.createBug !== null) {
+  if (timestamp > game.bugsState.timeSpawn && game.isWorking) {
     game.createBug();
     game.bugsState.timeSpawn += 1500;
-  }
+  } 
 
   window.requestAnimationFrame(gameLoop.bind(null, game));
 }

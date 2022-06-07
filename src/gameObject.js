@@ -29,7 +29,10 @@ function initialGameObj() {
       top: 20,
       speed: 10,
     },
+    isWorking: true,
+    
     createBug() {
+      if(this.isWorking) {
       const bugElement = document.createElement("div");
       bugElement.classList.add("bugs");
 
@@ -44,6 +47,7 @@ function initialGameObj() {
       this.bugElement = bugElement;
 
       return bugElement;
+      }
     },
     bugsState: {
       width: 52,
