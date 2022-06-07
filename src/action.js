@@ -18,7 +18,7 @@ function moveWizard(game) {
     }
   }
   if (game.keys.KeyS) {
-    if (stateOfWizard.top < game.screen.offsetHeight - 5) {
+    if (stateOfWizard.top < game.screen.offsetHeight - 140) {
       stateOfWizard.top += stateOfWizard.speed;
     }
   }
@@ -28,7 +28,8 @@ function moveWizard(game) {
     "px";
 
   wizardElement.style.top =
-    Math.floor(Math.max(stateOfWizard.top - stateOfWizard.height + 125 , 0)) + "px";
+    Math.floor(Math.max(stateOfWizard.top - stateOfWizard.height + 125, 0)) +
+    "px";
 }
 
 function moveBugs() {
@@ -65,12 +66,14 @@ function fireBalls(game, timestamp) {
   }
 }
 
-function killBugs() {
+function killBugs(game) {
   document.querySelectorAll(".bugs").forEach((e) => {
     document.querySelectorAll(".fireBalls").forEach((f) => {
       if (detectCollision(e, f)) {
         e.remove();
         f.remove();
+        game.scoreCounting += 100;
+        game.tableScore();
       }
     });
   });

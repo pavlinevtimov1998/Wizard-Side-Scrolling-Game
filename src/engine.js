@@ -6,7 +6,7 @@ function gameLoop(game, timestamp) {
   moveWizard.call(null, game);
   moveBugs();
   fireBalls.call(null, game, timestamp);
-  killBugs();
+  killBugs(game);
 
   //End game
   killWizard(game);

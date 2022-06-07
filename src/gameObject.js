@@ -2,12 +2,19 @@ function initialGameObj() {
   const startGameBtn = document.querySelector(".start-game");
   const screen = document.querySelector(".screen");
   const score = document.createElement("div");
-  score.textContent = "score: ";
+  score.textContent = "score: 0";
 
   return {
     startGameBtn,
     screen,
     score,
+    scoreCounting: 0,
+    tableScore() {
+      this.score.textContent = this.score.textContent.replace(
+        this.score.textContent,
+        "score: " + this.scoreCounting
+      );
+    },
     createWizard() {
       const wizardElement = document.createElement("div");
       wizardElement.classList.add("wizard");
@@ -41,7 +48,7 @@ function initialGameObj() {
 
         bugElement.style.left =
           screen.offsetWidth - this.bugsState.width + "px";
-        bugElement.style.top = Math.floor(Math.random() * 700) + "px";
+        bugElement.style.top = 20 + Math.floor(Math.random() * 650) + "px";
 
         bugElement.style.width = this.bugsState.width + "px";
         bugElement.style.height = this.bugsState.height + "px";
@@ -89,6 +96,5 @@ function initialGameObj() {
       speed: 8,
       fireSpawn: 0,
     },
-    isFinish: false,
   };
 }
