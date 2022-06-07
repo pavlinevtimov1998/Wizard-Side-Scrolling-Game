@@ -5,6 +5,7 @@ function start(game) {
 function gameLoop(game, timestamp) {
   moveWizard.call(null, game);
   moveBugs();
+  fireBalls.call(null, game);
 
   if (timestamp > game.bugsState.timeSpawn) {
     game.createBug();

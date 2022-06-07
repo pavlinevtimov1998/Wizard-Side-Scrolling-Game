@@ -39,3 +39,9 @@ function moveBugs() {
     }
   });
 }
+
+function fireBalls (game) {
+    if(game.keys.Space) {
+        game.createFireBalls();
+    }
+}

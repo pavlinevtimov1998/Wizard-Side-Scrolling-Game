@@ -41,6 +41,12 @@ body {
   position: absolute;
 }
 
+.fireBalls {
+    background-image: url(/src/images/fire-ball.png);
+    background-size: cover;
+    position: absolute;
+}
+
 .bugs {
     background-image: url(/src/images/bug.png);
     background-size: cover;
