@@ -77,6 +77,7 @@ function initialGameObj() {
       width: 32,
       height: 32,
       speed: 8,
+      fireSpawn: 0,
     },
   };
 }

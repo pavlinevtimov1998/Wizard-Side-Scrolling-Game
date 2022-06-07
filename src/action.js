@@ -40,10 +40,13 @@ function moveBugs() {
   });
 }
 
-function fireBalls(game) {
+function fireBalls(game, timestamp) {
   if (game.keys.Space) {
     game.wizardElement.classList.add("wizardFire");
-    game.createFireBalls();
+    if (timestamp > game.stateOfFireBalls.fireSpawn) {
+      game.createFireBalls();
+      game.stateOfFireBalls.fireSpawn = timestamp + 500;
+    }
   } else {
     game.wizardElement.classList.remove("wizardFire");
   }
