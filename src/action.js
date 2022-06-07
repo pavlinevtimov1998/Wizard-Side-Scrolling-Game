@@ -78,9 +78,18 @@ function killBugs() {
 
 function killWizard(game) {
   const { wizardElement } = game;
+
+  isFinish = false;
+
   document.querySelectorAll(".bugs").forEach((e) => {
     if (detectCollision(e, wizardElement)) {
       wizardElement.remove();
+      isFinish = true;
+    }
+
+    if (isFinish) {
+      game.createBug = null;
+      return endGame.call(null, game);
     }
   });
 }
@@ -97,4 +106,22 @@ function detectCollision(objA, objB) {
   );
 
   return isCollision;
+}
+
+function endGame(game) {
+  const { screen } = game;
+  screen.innerHTML = "";
+  
+
+  const gameOver = document.createElement("div");
+//   const startAgain = document.createElement("div");
+
+//   startAgain.textContent = "TRY AGAIN";
+//   startAgain.classList.add("try-again");
+
+  gameOver.textContent = "GAME OVER!";
+  gameOver.classList.add("game-over");
+//   gameOver.appendChild(startAgain);
+
+  screen.appendChild(gameOver);
 }

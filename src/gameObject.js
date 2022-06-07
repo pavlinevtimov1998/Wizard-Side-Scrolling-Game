@@ -79,5 +79,6 @@ function initialGameObj() {
       speed: 8,
       fireSpawn: 0,
     },
+    isFinish: false,
   };
 }
