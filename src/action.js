@@ -30,3 +30,5 @@ function moveWizard(game) {
   wizardElement.style.top =
     Math.floor(Math.max(stateOfWizard.top - stateOfWizard.height, 0)) + "px";
 }
+
+

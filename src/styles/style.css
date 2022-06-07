@@ -39,8 +39,12 @@ body {
   background-image: url(/src/images/wizard.png);
   background-size: cover;
   position: absolute;
-  width: 82px;
-  height: 100px;
+}
+
+.bugs {
+    background-image: url(/src/images/bug.png);
+    background-size: cover;
+    position: absolute;
 }
 
 .start-game:hover {
