@@ -47,4 +47,17 @@ function fireBalls(game) {
   } else {
     game.wizardElement.classList.remove("wizardFire");
   }
+
+  if (game.fireBalls) {
+    document.querySelectorAll(".fireBalls").forEach((e) => {
+      e.style.left =
+        parseInt(e.style.left) + game.stateOfFireBalls.speed + "px";
+      if (
+        parseInt(e.style.left) >
+        game.screen.offsetWidth - parseInt(e.style.width)
+      ) {
+        e.remove();
+      }
+    });
+  }
 }

@@ -49,7 +49,7 @@ function initialGameObj() {
       width: 52,
       height: 52,
       timeSpawn: 0,
-      speed: 5,
+      speed: 6,
     },
     createFireBalls() {
       const fireBalls = document.createElement("div");
@@ -76,6 +76,7 @@ function initialGameObj() {
     stateOfFireBalls: {
       width: 32,
       height: 32,
+      speed: 8,
     },
   };
 }
