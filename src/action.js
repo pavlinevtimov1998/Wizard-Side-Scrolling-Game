@@ -76,6 +76,15 @@ function killBugs() {
   });
 }
 
+function killWizard(game) {
+  const { wizardElement } = game;
+  document.querySelectorAll(".bugs").forEach((e) => {
+    if (detectCollision(e, wizardElement)) {
+      wizardElement.remove();
+    }
+  });
+}
+
 function detectCollision(objA, objB) {
   let first = objA.getBoundingClientRect();
   let second = objB.getBoundingClientRect();
