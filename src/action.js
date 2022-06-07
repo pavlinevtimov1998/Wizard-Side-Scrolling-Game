@@ -30,3 +30,12 @@ function moveWizard(game) {
   wizardElement.style.top =
     Math.floor(Math.max(stateOfWizard.top - stateOfWizard.height, 0)) + "px";
 }
+
+function moveBugs() {
+  document.querySelectorAll(".bugs").forEach((e) => {
+    e.style.left = parseInt(e.style.left) - game.bugsState.speed + "px";
+    if (parseInt(e.style.left) < 0) {
+      e.remove();
+    }
+  });
+}

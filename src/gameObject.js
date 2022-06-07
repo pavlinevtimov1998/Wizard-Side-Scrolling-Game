@@ -46,8 +46,8 @@ function initialGameObj() {
       return bugElement;
     },
     bugsState: {
-      width: 32,
-      height: 32,
+      width: 52,
+      height: 52,
       timeSpawn: 0,
       speed: 5,
     },
